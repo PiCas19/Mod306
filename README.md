@@ -1,2 +1,4 @@
 # Mod306
-### Nel modulo 306 vengono pubblicati i progetti realizzati durante l'anno
+## Realizzare un piccolo proggetto IT
+> In questa repositry vengono pubblicati i proggetti IT realizzati durante l'anno scolastico.
+
