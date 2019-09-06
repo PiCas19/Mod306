@@ -14,8 +14,7 @@
 
 ##  Problemi riscontrati e soluzioni adottate
 ### Durante l'installazione di GitHub desktop non riuscivo a fare il clone della
-### mia ripository di GitHub. Ho provato ad aggiungere le seguente righe nel file 
-### .gitconfig: 
+### mia ripository di GitHub. Ho provato ad aggiungere le seguente righe nel file .gitconfig: 
 ```markdown
  [http]
       proxy = http://nome.cognome:proxypass@proxy:8080
