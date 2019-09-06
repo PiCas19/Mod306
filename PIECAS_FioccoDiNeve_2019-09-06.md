@@ -32,7 +32,7 @@
       proxyAuthMethod = basic
       schannelCheckRevoke = false #Solo se necessario
 ```
-### Purtroppo non funzionava e quindi ho deciso di terminare la configurazione di GitHub desktop a casa, visto che non c'é la problematica del proxy.
+#### Purtroppo non funzionava e quindi ho deciso di terminare la configurazione di GitHub desktop a casa, visto che non c'é la problematica del proxy.
 
 
 
