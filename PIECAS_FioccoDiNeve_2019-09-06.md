@@ -14,9 +14,6 @@
 |16:32 | Eseguo il commit del primo diario |
 |16:45 - 16:50 |Configurazione GitHub desktop (funzionante)|
 |18:50 - 18:53 | Installazione e configurazione Sourcetree |
-|....- .....| Creazione ripository GitHub e modifica dei readme |
-| .... - .... | Inizio analisi del proggetto |
-| ... - ... | Terminare diario di lavoro |
 
 
 ##  Problemi riscontrati e soluzioni adottate
@@ -43,4 +40,4 @@
 
 ## Programma di massima per la prossima giornata di lavoro
 
-#### Per la prossima giornata di lavoro terminare l'analisi del progetto e pianificare come e quali strumenti o software devo utilizzare.
+#### Per la prossima giornata di lavoro terminare l'analisi del progetto e pianificare come e quali strumenti o software devo utilizzare. Cercare di creare delle repository nella repository Mod306.
