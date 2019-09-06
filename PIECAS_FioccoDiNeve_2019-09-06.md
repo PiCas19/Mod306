@@ -1,6 +1,6 @@
 # Fiocco di neve | Diario di lavoro
 ##### Pierpaolo Casati
-### Trevano-Canobbio, [06.09.2019]
+### Trevano-Canobbio, 06.09.2019
 
 ## Lavori svolti
 
