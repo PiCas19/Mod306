@@ -20,8 +20,7 @@
 
 
 ##  Problemi riscontrati e soluzioni adottate
-### Durante l'installazione di GitHub desktop non riuscivo a fare il clone della
-### mia ripository di GitHub. Ho provato ad aggiungere le seguenti righe nel file .gitconfig: 
+#### Durante l'installazione di GitHub desktop non riuscivo a fare il clone dellamia ripository di GitHub. Ho provato ad aggiungere le seguenti righe nel file .gitconfig: 
 ```markdown
  [http]
       proxy = http://nome.cognome:proxypass@proxy:8080
@@ -39,10 +38,9 @@
 
 ##  Punto della situazione rispetto alla pianificazione
 
-### A scuola pensavo di riuscire a terminare il diario di lavoro, creare delle ripository e iniziare almeno a fare l'analisi.
-### Purtoppo la configurazione di GitHub Desktop non funzionava e mi ha rallentato tutta la mia pianificazione, quindi ho terminato a casa.
+#### A scuola pensavo di riuscire a terminare il diario di lavoro, creare delle ripository e iniziare almeno a fare l'analisi. Purtoppo la configurazione di GitHub Desktop non funzionava e mi ha rallentato tutta la mia pianificazione, quindi ho terminato a casa.
 
 
 ## Programma di massima per la prossima giornata di lavoro
 
-### Per la prossima giornata di lavoro terminare l'analisi del progetto e pianificare come e quali strumenti o software devo utilizzare.
+#### Per la prossima giornata di lavoro terminare l'analisi del progetto e pianificare come e quali strumenti o software devo utilizzare.
