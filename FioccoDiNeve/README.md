@@ -1,3 +1,3 @@
-# Fiocco di Neve
+# Fiocco di neve
 ## Progetto primo semestre
 
