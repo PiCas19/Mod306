@@ -51,60 +51,25 @@
 
 ### Informazioni sul progetto
 
-  In questo capitolo raccogliere le informazioni relative al progetto, ad esempio:
+  In questo capitolo vengono raccolte diverse informazioni relative al proggetto:
 
-  -   Allievo/i e docente/i coinvolti nel progetto e rispettivi ruoli,
+  -   Allievo: Pierpaolo Casati (Sviluppatore)
+  -   Docenti: Geo Petrini e Luca Muggiasca (clienti e superiori professionali)
 
-  -   scuola ,sezione, materia/e,
+  -   Scuola Arti e Mestieri / CPT Trevano-Canobbio , sezione informatica, modulo 306 - Realizzare un piccolo proggetto IT
 
-  -   date di inizio e termine di consegna,
+  -   data inizio: 6 settembre 2019, data fine: 20 dicembre 2019
 
-  -   …
+  -   Nome progetto: Fiocco di neve
 
 ### Abstract
 
-  E’ una breve e accurata rappresentazione dei contenuti di un documento,
-  senza notazioni critiche o valutazioni. Lo scopo di un abstract efficace
-  dovrebbe essere quello di far conoscere all’utente il contenuto di base
-  di un documento e metterlo nella condizione di decidere se risponde ai
-  suoi interessi e se è opportuno il ricorso al documento originale.
+Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante il primo semestre tutti gli allievi del terzo anno della sezione informatica devono gestire e realizzare un proggetto IT. Il nome del proggetto si chiama Fiocco di neve ed è un software che permette di generare dei fiocchi di neve. Questo proggetto viene realizzato in modo individuale da ogni allievo. Alla fine del proggetto deve essere presentato e mostrato davanti a tutta la classe.
 
-  Può contenere alcuni o tutti gli elementi seguenti:
-
-  -   **Background/Situazione iniziale**
-
-  -   **Descrizione del problema e motivazione**: Che problema ho cercato
-      di risolvere? Questa sezione dovrebbe includere l'importanza del
-      vostro lavoro, la difficoltà dell'area e l'effetto che potrebbe
-      avere se portato a termine con successo.
-
-  -   **Approccio/Metodi**: Come ho ottenuto dei progressi? Come ho
-      risolto il problema (tecniche…)? Quale è stata l’entità del mio
-      lavoro? Che fattori importanti controllo, ignoro o misuro?
-
-  -   **Risultati**: Quale è la risposta? Quali sono i risultati? Quanto è
-      più veloce, più sicuro, più economico o in qualche altro aspetto
-      migliore di altri prodotti/soluzioni?
-
-  Esempio di abstract:
-
-  > *As the size and complexity of today’s most modern computer chips
-  > increase, new techniques must be developed to effectively design and
-  > create Very Large Scale Integration chips quickly. For this project, a
-  > new type of hardware compiler is created. This hardware compiler will
-  > read a C++ program, and physically design a suitable microprocessor
-  > intended for running that specific program. With this new and powerful
-  > compiler, it is possible to design anything from a small adder, to a
-  > microprocessor with millions of transistors. Designing new computer
-  > chips, such as the Pentium 4, can require dozens of engineers and
-  > months of time. With the help of this compiler, a single person could
-  > design such a large-scale microprocessor in just weeks.*
 
 ### Scopo
 
-  Lo scopo del progetto (scopi didattici/scopi operativi). Dovrebbe
-  descrivere il mandato, ma non vanno ricopiate le informazioni del
-  quaderno dei compiti (che va invece allegato).
+  Il primo scopo di questo proggetto è mettere in pratica le nezioni che abbiamo imparato quest'anno e negli anni precedenti. Invece il secondo scopo di questo proggetto è imparare a realizzare e gestire in modo corretto un piccolo proggetto IT.
 
 
 ## Analisi
