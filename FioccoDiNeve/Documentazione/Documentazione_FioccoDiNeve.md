@@ -78,25 +78,6 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
 
   Il software deve funzionare su delle piattaforme sul quale funziona Java e deve generare un fiocco di neve a partire dei tagli su un triangolo. Questo prodotto funziona anche con delle forbici e della carta, però con questo software viene generato più velocemente il fiocco. Questo prodotto può essere utilizzato per lo svago e quindi non è un prodotto da utilizzare in azienda. Può essere utilizzato da qualsiasi utenti anche quelli meno esperti, perché è un'applicazione intuitiva e facile da utilizzare.
 
-  -   Background/Situazione iniziale
-
-  -   Quale è e come è organizzato il contesto in cui il prodotto dovrà
-      funzionare?
-
-  -   Come viene risolto attualmente il problema? Esiste già un prodotto
-      simile?
-
-  -   Chi sono gli utenti? Che bisogni hanno? Come e dove lavorano?
-
-  -   Che competenze/conoscenze/cultura posseggono gli utenti in relazione
-      con il problema?
-
-  -   Esistono convenzioni/standard applicati nel dominio?
-
-  -   Che conoscenze teoriche bisogna avere/acquisire per poter operare
-      efficacemente nel dominio?
-
-  -   …
 
 ### Analisi e specifica dei requisiti
 
@@ -123,32 +104,21 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
 
   -   …
 
-  In base alla lista dei requisiti e all’analisi degli stessi, il
-  progettista redige una *specifica dei requisiti* in cui elenca e
-  descrive in modo dettagliato quali sono le funzionalità che il prodotto
-  fornirà. La specifica dovrebbe essere abbastanza dettagliata da poter
-  essere utilizzata come base per lo sviluppo, ma non troppo; ad esempio
-  non dovrebbe contenere dettagli di implementazione, o definizioni
-  dettagliate dell’interfaccia grafica a meno che questi non siano
-  considerati cruciali. Non si deve scordare che i requisiti non
-  rappresentano delle attività bensì delle caratteristiche che il prodotto
-  dovrà possedere.
-
 
 
 
   |**ID**	|**Categoria** |**Nome**			|**Priorità**|**Vers**
   |----|------------|----------------|--------|----|------|
   |req-00|Linguaggio |Deve essere fatto in java|1|1.0|
-  |req-01| |Sistema per tagliare il triangolo|1|1.0|
-  |req-02 |Sistema per potere aggiungere e resettare i punti|1|1.0|
-  |req-03 |Sistema per potere aggiungere e resettare i punti|1|1.0|
-  |req-04 |Creare tasto "Genera" per generare Fiocco|1|1.0|
-  |req-05 |Generare il fiocco di neve in tempo reale|3|1.0|
-  |req-06 |Sistema per salvare fiocco di neve generato in immagine|1|1.0|
-  |req-07|Sistema per salvare i pnti per modifiche o rigenerazioni future|1|1.0|
+  |req-01|Linguaggio |Sistema per tagliare il triangolo|1|1.0|
+  |req-02|Linguaggio |Sistema per potere aggiungere e resettare i punti|1|1.0|
+  |req-03|Linguaggio |Sistema per potere aggiungere e resettare i punti|1|1.0|
+  |req-04|Linguaggio e grafica |Creare tasto "Genera" per generare Fiocco|1|1.0|
+  |req-05|Linguaggio  |Generare il fiocco di neve in tempo reale|3|1.0|
+  |req-06|Linguaggio |Sistema per salvare fiocco di neve generato in immagine|1|1.0|
+  |req-07|Sistema|Sistema per salvare i pnti per modifiche o rigenerazioni future|1|1.0|
   |req-08|Web|Creare un sito web|2|1.0|
-  |req-09||Sistema per scaricare l'applicazione|2|1.0|
+  |req-09|Web e sistema|Sistema per scaricare l'applicazione|2|1.0|
 
 
 
@@ -158,24 +128,15 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
 
 **ID**: identificativo univoco del requisito
 
+**Categoria**: indice tipo categoria del requisito
+
 **Nome**: breve descrizione del requisito
 
 **Priorità**: indica l’importanza di un requisito nell’insieme del
-progetto, definita assieme al committente. Ad esempio poter disporre di
-report con colonne di colori diversi ha priorità minore rispetto al
-fatto di avere un database con gli elementi al suo interno. Solitamente
-si definiscono al massimo di 2-3 livelli di priorità.
+progetto.
 
-**Versione**: indica la versione del requisito. Ogni modifica del
-requisito avrà una versione aggiornata.
+**Versione**: indica la versione del requisito.
 
-Sulla documentazione apparirà solamente l’ultima versione, mentre le
-vecchie dovranno essere inserite nei diari.
-
-**Note**: eventuali osservazioni importanti o riferimenti ad altri
-requisiti.
-
-**Sotto requisiti**: elementi che compongono il requisito.
 
 
 ### Use case
