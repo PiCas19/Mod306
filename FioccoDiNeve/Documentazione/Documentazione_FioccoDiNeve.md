@@ -76,9 +76,7 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
 
 ### Analisi del dominio
 
-  Questo capitolo dovrebbe descrivere il contesto in cui il prodotto verrà
-  utilizzato, da questa analisi dovrebbero scaturire le risposte a quesiti
-  quali ad esempio:
+  Il software deve funzionare su delle piattaforme sul quale funziona Java e deve generare un fiocco di neve a partire dei tagli su un triangolo. Questo prodotto funziona anche con delle forbici e della carta, però con questo software viene generato più velocemente il fiocco. Questo prodotto può essere utilizzato per lo svago e quindi non è un prodotto da utilizzare in azienda. Può essere utilizzato da qualsiasi utenti anche quelli meno esperti, perché è un'applicazione intuitiva e facile da utilizzare.
 
   -   Background/Situazione iniziale
 
@@ -139,11 +137,18 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
 
 
 
-  |**ID**	|**Nome**			|**Priorità**|**Vers**|**Note**  |
-  |----|------------|--------|----|------|
-  |Req-12|Dovrà esserci una maschera di login|1|1.0|...|
-  |Req-13|Si dovranno poter immettere nuovi allievi|1|1.0|...|
-  |Req-14|Dovrà essere possibile la ricerca di allievi|1|1.0|...|
+  |**ID**	|**Categoria** |**Nome**			|**Priorità**|**Vers**
+  |----|------------|----------------|--------|----|------|
+  |req-00|Linguaggio |Deve essere fatto in java|1|1.0|
+  |req-01| |Sistema per tagliare il triangolo|1|1.0|
+  |req-02 |Sistema per potere aggiungere e resettare i punti|1|1.0|
+  |req-03 |Sistema per potere aggiungere e resettare i punti|1|1.0|
+  |req-04 |Creare tasto "Genera" per generare Fiocco|1|1.0|
+  |req-05 |Generare il fiocco di neve in tempo reale|3|1.0|
+  |req-06 |Sistema per salvare fiocco di neve generato in immagine|1|1.0|
+  |req-07|Sistema per salvare i pnti per modifiche o rigenerazioni future|1|1.0|
+  |req-08|Web|Creare un sito web|2|1.0|
+  |req-09||Sistema per scaricare l'applicazione|2|1.0|
 
 
 
