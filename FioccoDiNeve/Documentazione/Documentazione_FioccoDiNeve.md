@@ -81,44 +81,31 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
 
 ### Analisi e specifica dei requisiti
 
-  Il progettista, dopo aver ricevuto il mandato, in collaborazione con il
-  committente redige una lista di requisiti. Durante questi incontri,
-  tramite interviste (da inserire nei diari), il progettista deve cercare
-  di rispondere alle seguenti domande:
-
-  -   Quali sono i bisogni del committente?
-
-  -   Quali funzioni deve svolgere il prodotto?
-
-  -   Come devono essere implementate?
-
-  -   L’utente, come vorrebbe/dovrebbe interagire con il prodotto?
-
-  -   Come verrà utilizzato il prodotto?
-
-  -   Che tipo di interfaccia si immagina?
-
-  -   Che prestazioni minime deve fornire il prodotto?
-
-  -   Che grado di sicurezza deve avere il prodotto?
-
-  -   …
-
+  Il software deve essere funzionante e semplice da utilizzare per il committente. Il prodotto permette di generare un fiocco di neve partendo da un triangolo ritagliato. L'utente può scegliere come tagliare il triangolo, cioè quanti sono i numeri di punti di taglio e il tipo di poligono con cui tagliare il triangolo. Il prodotto parte con una finestra home dove si può caricare un modello già salvato (miniatura) o creare un nuovo taglio del triangolo. Nella finestra di taglio c'è un menu opzioni (menu a tendina) alto a sinistra, pulsante genera per vedere anteprima fiocco di neve e pulsante reset per rimuovere punto. Per tagliare viene utilizzato click sinistro (opzioni click destro per mancini) e ad ogni click viene mostrato in basso a destra il fiocco di neve (live). Nella schermata anteprima si può salvare modello cliccando un pulsante e si può anche creare un immagine PNG o SVG (scegliendo anche dimesnione 500px - 1000px) cliccando dei pulsanti. La finestra può essere ridimensionabile con dimensione minime 1024x768 px. Questo prodotto è accessibile a tutti su un sito web e non c'è un tipo di sicurezza.
 
 
 
   |**ID**	|**Categoria** |**Nome**			|**Priorità**|**Vers**
-  |----|------------|----------------|--------|----|------|
+  |----|------------|----------------|--------|----|
   |req-00|Linguaggio |Deve essere fatto in java|1|1.0|
-  |req-01|Linguaggio |Sistema per tagliare il triangolo|1|1.0|
-  |req-02|Linguaggio |Sistema per potere aggiungere e resettare i punti|1|1.0|
-  |req-03|Linguaggio |Sistema per potere aggiungere e resettare i punti|1|1.0|
-  |req-04|Linguaggio e grafica |Creare tasto "Genera" per generare Fiocco|1|1.0|
-  |req-05|Linguaggio  |Generare il fiocco di neve in tempo reale|3|1.0|
-  |req-06|Linguaggio |Sistema per salvare fiocco di neve generato in immagine|1|1.0|
-  |req-07|Sistema|Sistema per salvare i pnti per modifiche o rigenerazioni future|1|1.0|
-  |req-08|Web|Creare un sito web|2|1.0|
-  |req-09|Web e sistema|Sistema per scaricare l'applicazione|2|1.0|
+  |req-01|Sistema|Creare un database|2|1.0|
+  |req-02|Grafica e linguaggio | Creare schermata home con caricamento miniatura o nuovo taglio|2|1.0|
+  |req-03|Grafica e linguaggio | Creare barra menu in alto a sinistra|2|1.0|
+  |req-04|Grafica e linguaggio|Schermata di caricamento con miniatura|2|1.0|
+  |req-05|Grafica e linguaggio|La finestra deve essere ridimensionabile (Min: 1024x768)|2|1.0|
+  |req-06|Grafica e linguaggio|Triangolo ridimensionabile|2|1.0|
+  |req-07|Linguaggio|Creare pulsante opzione numero e tipo di poligono utilizzare|3|1.0|
+  |req-08|Linguaggio |Sistema per tagliare il triangolo|1|1.0|
+  |req-09|Linguaggio |Sistema per potere aggiungere (click sinistro del mouse) e resettare i punti (pulsante)|1|1.0|
+  |req-010|Linguaggio e grafica |Creare tasto "Genera" per anteprima Fiocco|1|1.0|
+  |req-011|Linguaggio  |Generare il fiocco di neve in tempo reale da subito (la live viene visualizzata in basso a sinistra della finestra)|3|1.0|
+  |req-012|Linguaggio |Sistema per salvare fiocco di neve generato in immagine (nella schermata anteprima)|1|1.0|
+  |req-013|Grafica e linguaggio |Creare pulsante opzione PNG e SVG (dimensioni: 500px)|1|1.0|
+  |req-014|Sistema|Sistema per salvare i punti per modifiche o rigenerazioni future (database + miniature)|1|1.0|
+  |req-015|Sistema|Salvataggio percorso in un database|2|1.0|
+  |req-016|Web|Creare un sito web|2|1.0|
+  |req-017|Web e contesto|Sito web deve contenere lista req. di sistema, JRE, guida con screenshots|2|1.0|
+  |req-018|Web e sistema|Sistema per scaricare l'applicazione|2|1.0|
 
 
 
@@ -128,7 +115,7 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
 
 **ID**: identificativo univoco del requisito
 
-**Categoria**: indice tipo categoria del requisito
+**Categoria**: tipo di categoria del requisito
 
 **Nome**: breve descrizione del requisito
 
@@ -161,16 +148,10 @@ in questo capitolo.
 
 ### Analisi dei mezzi
 
-Elencare e *descrivere* i mezzi disponibili per la realizzazione del
-progetto. Ricordarsi di sempre descrivere nel dettaglio le versioni e il
-modello di riferimento.
-
-SDK, librerie, tools utilizzati per la realizzazione del progetto e
-eventuali dipendenze.
-
-Su quale piattaforma dovrà essere eseguito il prodotto? Che hardware
-particolare è coinvolto nel progetto? Che particolarità e limitazioni
-presenta? Che hw sarà disponibile durante lo sviluppo?
+- 1 PC fisso della scuola con tool necessari preinstallati
+- 1 PC portatile (MacBook Pro  2015) con tool e SW necessari
+- Java: JDK 12, NetBeans 11.1
+- SW: Atom 1.40.1, GitHub Desktop 2.1.3 e ProjectLibre 1.9.1
 
 ## Progettazione
 
