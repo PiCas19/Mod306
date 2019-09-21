@@ -88,7 +88,7 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
   |**ID**	|**Categoria** |**Nome**			|**Priorità**|**Vers**
   |----|------------|----------------|--------|----|
   |req-00|Linguaggio |Deve essere fatto in java|1|1.0|
-  |req-01|Sistema|Creare un database|2|1.0|
+  |req-01|Sistema|Creare file salvataggio|2|1.0|
   |req-02|Grafica e linguaggio | Creare schermata home con caricamento miniatura o nuovo taglio|2|1.0|
   |req-03|Grafica e linguaggio | Creare barra menu in alto a sinistra|2|1.0|
   |req-04|Grafica e linguaggio|Schermata di caricamento con miniatura|2|1.0|
@@ -102,7 +102,7 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
   |req-012|Linguaggio |Sistema per salvare fiocco di neve generato in immagine (nella schermata anteprima)|1|1.0|
   |req-013|Grafica e linguaggio |Creare pulsante opzione PNG e SVG (dimensioni: 500px)|1|1.0|
   |req-014|Sistema|Sistema per salvare i punti per modifiche o rigenerazioni future (database + miniature)|1|1.0|
-  |req-015|Sistema|Salvataggio percorso in un database|2|1.0|
+  |req-015|Sistema|Salvataggio percorso in un file CSV|2|1.0|
   |req-016|Web|Creare un sito web|2|1.0|
   |req-017|Web e contesto|Sito web deve contenere lista req. di sistema, JRE, guida con screenshots|2|1.0|
   |req-018|Web e sistema|Sistema per scaricare l'applicazione|2|1.0|
