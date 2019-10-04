@@ -132,7 +132,7 @@ I casi d’uso rappresentano l’interazione tra i vari attori e le
 funzionalità del prodotto.
 
 ### Pianificazione
-- [Gantt](./Progettazione)
+- [Gantt](../Progettazione)
 
 ### Analisi dei mezzi
 
