@@ -132,19 +132,7 @@ I casi d’uso rappresentano l’interazione tra i vari attori e le
 funzionalità del prodotto.
 
 ### Pianificazione
-
-Prima di stabilire una pianificazione bisogna avere almeno una vaga idea
-del modello di sviluppo che si intende adottare. In questa sezione
-bisognerà inserire il modello concettuale di sviluppo che si seguirà
-durante il progetto. Gli elementi di riferimento per una buona
-pianificazione derivano da una scomposizione top-down della problematica
-del progetto.
-
-La pianificazione può essere rappresentata mediante un diagramma di
-Gantt.
-
-Se si usano altri metodi di pianificazione (es scrum), dovranno apparire
-in questo capitolo.
+- [Gantt][./Progettazione]
 
 ### Analisi dei mezzi
 
