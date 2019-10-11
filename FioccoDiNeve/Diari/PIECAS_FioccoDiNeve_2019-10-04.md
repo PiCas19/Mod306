@@ -1,8 +1,8 @@
 # Fiocco di neve | Diario di lavoro
 ##### Pierpaolo Casati
-### Canobbio, 10.04.2019
+### Canobbio, 04.10.2019
 
-## Lavori svolti
+## Lavori svoltis
 
 
 |Data|Orario        |Lavoro svolto                 |
