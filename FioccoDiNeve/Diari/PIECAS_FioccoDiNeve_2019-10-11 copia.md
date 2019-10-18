@@ -7,7 +7,7 @@
 
 |Data|Orario        |Lavoro svolto                 |
 |-----|--------------|------------------------------|
-|10.10s.2019|17:00-19:00|Terminato i punti e responsive |
+|10.10.2019|17:00-19:00|Terminato i punti e responsive |
 |11.10.2019|10:05-16:30|Terminato di collegare i punti di taglio|
 
 

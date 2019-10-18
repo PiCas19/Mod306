@@ -128,8 +128,7 @@ progetto.
 
 ### Use case
 
-I casi d’uso rappresentano l’interazione tra i vari attori e le
-funzionalità del prodotto.
+
 
 ### Pianificazione
 - [Gantt](../Progettazione/Fiocco%20di%20neve.pdf)
