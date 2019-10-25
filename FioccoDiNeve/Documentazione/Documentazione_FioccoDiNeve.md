@@ -127,8 +127,9 @@ progetto.
 
 
 ### Use case
-
-
+|**ID**	|**Referimento** |**Nome**|**Descrizione**|**Procedura**|**Risultati attesi**
+|-------|----------------|------------------------|-------------|--------------------|
+|tc-00  |req-05|Finestra ridimensionabile|La finestra dell'aplicazione deve essere ridimensionabile|1. Aprire l'applicazione e con il mouse cercare di ridimensionare la finestra 2. Diminuire la finestra per verificare che le dimensioni minime sono di 1024x768| La finestra è rdimensionabile e le sue dimensioni minime siano di 1024x768|
 
 ### Pianificazione
 - [Gantt](../Progettazione/Fiocco%20di%20neve.pdf)
