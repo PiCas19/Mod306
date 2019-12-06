@@ -129,8 +129,12 @@ progetto.
 ### Use case
 
 |**ID**	|**Referimento** |**Nome** |**Descrizione** |**Procedura** |**Risultati attesi**
-|-------|----------------|---------|----------------|--------------|--------------------|
-|tc-00  |req-05|Finestra ridimensionabile|La finestra dell'aplicazione deve essere ridimensionabile|1. Aprire l'applicazione e con il mouse cercare di ridimensionare la finestra <br/> 2. Diminuire la finestra per verificare che le dimensioni minime sono di 1024x768| La finestra è rdimensionabile e le sue dimensioni minime siano di 1024x768|
+|----------|----------------|---------|----------------|--------------|--------------------|
+|tc-00 | req-01|Creare file salvataggio|File sul quale vengono salvati i punti di taglio| Nel menu bar del frame principale cliccare la voce "File" => "Save". Quest'ultimo permette di salvare i punti di taglio.| Ogni volta che salvo i punti di taglio l'applicazione deve creare un file di salvataggio punti|
+|tc-01| req-02 | Finestra home con caricamento miniatura o nuovo taglio|Un Frame sul quale posso scegliere se creare un nuovo taglio o caricare dei tagli già esistenti|Quando avvio l'applicazione ho due opzioni:</br>1. Caricare dei tagli già esistenti.</br> 2. Creare un nuovo taglio </br> Scegliere l'opzione che si vuole.| Se scelgo di caricare dei tagli già esistenti, mi crea il triangolo con i vari poligoni di taglio. Invece se scelgo l'opzione nuovo, mi crea una finestra con un nuovo triangolo.|
+|tc-02|req-03|Creare barra menu in alto a sinistra|MenuBar in alto a sinistra con opzione file, nel quale si può salvare punti di taglio, craere un nuovo Snowflake e aprire un tagli esistenti|
+|tc-01  |req-05|Finestra ridimensionabile|La finestra dell'aplicazione deve essere ridimensionabile|1. Aprire l'applicazione e con il mouse cercare di ridimensionare la finestra <br/> 2. Diminuire la finestra per verificare che le dimensioni minime sono di 1024x768| La finestra è ridimensionabile e le sue dimensioni minime siano di 1024x768|
+
 
 ### Pianificazione
 - [Gantt](../Progettazione/Fiocco%20di%20neve.pdf)
