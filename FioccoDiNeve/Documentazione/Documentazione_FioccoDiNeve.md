@@ -100,12 +100,13 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
   |req-010|Linguaggio e grafica |Creare tasto "Genera" per anteprima Fiocco|1|1.0|
   |req-011|Linguaggio  |Generare il fiocco di neve in tempo reale da subito (la live viene visualizzata in basso a sinistra della finestra)|3|1.0|
   |req-012|Linguaggio |Sistema per salvare fiocco di neve generato in immagine (nella schermata anteprima)|1|1.0|
-  |req-013|Grafica e linguaggio |Creare pulsante opzione PNG e SVG (dimensioni: 500px)|1|1.0|
+  |req-013|Grafica e linguaggio |Creare pulsante opzione PNG e SVG (dimensioni: 500px 0 1000px)|1|1.0|
   |req-014|Sistema|Sistema per salvare i punti per modifiche o rigenerazioni future (database + miniature)|1|1.0|
   |req-015|Sistema|Salvataggio percorso in un file CSV|2|1.0|
   |req-016|Web|Creare un sito web|2|1.0|
   |req-017|Web e contesto|Sito web deve contenere lista req. di sistema, JRE, guida con screenshots|2|1.0|
   |req-018|Web e sistema|Sistema per scaricare l'applicazione|2|1.0|
+
 
 
 
@@ -130,10 +131,24 @@ progetto.
 
 |**ID**	|**Referimento** |**Nome** |**Descrizione** |**Procedura** |**Risultati attesi**
 |----------|----------------|---------|----------------|--------------|--------------------|
-|tc-00 | req-01|Creare file salvataggio|File sul quale vengono salvati i punti di taglio| Nel menu bar del frame principale cliccare la voce "File" => "Save". Quest'ultimo permette di salvare i punti di taglio.| Ogni volta che salvo i punti di taglio l'applicazione deve creare un file di salvataggio punti|
-|tc-01| req-02 | Finestra home con caricamento miniatura o nuovo taglio|Un Frame sul quale posso scegliere se creare un nuovo taglio o caricare dei tagli già esistenti|Quando avvio l'applicazione ho due opzioni:</br>1. Caricare dei tagli già esistenti.</br> 2. Creare un nuovo taglio </br> Scegliere l'opzione che si vuole.| Se scelgo di caricare dei tagli già esistenti, mi crea il triangolo con i vari poligoni di taglio. Invece se scelgo l'opzione nuovo, mi crea una finestra con un nuovo triangolo.|
-|tc-02|req-03|Creare barra menu in alto a sinistra|MenuBar in alto a sinistra con opzione file, nel quale si può salvare punti di taglio, craere un nuovo Snowflake e aprire un tagli esistenti|
-|tc-01  |req-05|Finestra ridimensionabile|La finestra dell'aplicazione deve essere ridimensionabile|1. Aprire l'applicazione e con il mouse cercare di ridimensionare la finestra <br/> 2. Diminuire la finestra per verificare che le dimensioni minime sono di 1024x768| La finestra è ridimensionabile e le sue dimensioni minime siano di 1024x768|
+|tc-01 | req-01|Creare file salvataggio|File sul quale vengono salvati i punti di taglio| Nel menu bar del frame principale cliccare la voce "File" => "Save". Quest'ultimo permette di salvare i punti di taglio| Ogni volta che salvo i punti di taglio l'applicazione deve creare un file di salvataggio punti|
+|tc-02| req-02 | Finestra home con caricamento miniatura o nuovo taglio|Un Frame sul quale posso scegliere se creare un nuovo taglio o caricare dei tagli già esistenti|Quando avvio l'applicazione ho due opzioni:</br>1. Caricare dei tagli già esistenti.</br> 2. Creare un nuovo taglio.</br> Scegliere l'opzione che si vuole| Se scelgo di caricare dei tagli già esistenti, mi crea il triangolo con i vari poligoni di taglio. Invece se scelgo l'opzione nuovo, mi crea una finestra con un nuovo triangolo|
+|tc-03|req-03|Creare barra menu in alto a sinistra|MenuBar in alto a sinistra con opzione file, nel quale si può salvare punti di taglio, craere un nuovo Snowflake e aprire dei tagli esistenti|Cliccare nella menubar l'opzione file| Quando clicclo il menu "File" apre un menu a tendina nel quale si trovano le opzioni "New", "Open", "Save"|
+tc-04|req-04|Schermata di caricamento con miniatura|Quando avvio l'aplicazione si apre per prima una schermata di caricamento dove posso scegliere se creare un nuovo fiocco o caricare una miniatura|Avviare l'applicazione. Nella schermata di caricamento posso scegliere due opzione.|Se scelgo l'opzione "New", mi permette di creare un nuovo fiocco di neve. Se invece clicco "Open", mi permette di caricare dei punti che ho salvato in precedenti tagli. Quest'ultimi posso utilizzarli come template di partenza.|
+|tc-05  |req-05|Finestra ridimensionabile|La finestra dell'aplicazione deve essere ridimensionabile|1. Aprire l'applicazione e con il mouse cercare di ridimensionare la finestra <br/> 2. Diminuire la finestra per verificare che le dimensioni minime sono di 1024x768| La finestra è ridimensionabile e le sue dimensioni minime siano di 1024x768|
+|tc-06|req-06|Triangolo ridimensionabile|Quandi ridimensiono la finestra, si deve anche ridimensionare il triangolo|Ridimensionare la finestra e verificare che il triangolo mantenga le su proporzioni| Il triangolo mantiene le sue proporzioni indipendentemente della dimensione della finestra|
+|tc-07|req-07|Creare pulsante opzione numero e tipo di poligono utilizzare|Un combo box che permette di definire la figura geometrica per tagliare il triangolo.Un'altro pulsante invece permette di aggiungere una nuovo poligono o figura per tagliare il triangolo|Cliccare sul combo box e scgliere la figura gemetrica da utilizzare per tagliare il triangolo. Cliccare il pulsante per aggiungere un nuovo poligono o figura geometrica|Se clicco sul combo box posso scegliere quale figura geometrica serve per tagliare il triangolo. Invece quando clicco il pulsante mi permette di aggiungere una nuovo poligono|
+|tc-08|req-08|Sistema per tagliare il triangolo|Sistema che mi permette di tagliare il triangolo|Ad ogni click mi permette di aggiungere un punto di taglio. Quest'ultimi vengono collegati e generano un poligono. Cliccando un pulsante "Cut" taglia il triangolo e genera il fiocco di neve|Fiocco di neve generato|
+|tc-09|Sistema per potere aggiungere (click sinistro del mouse) e resettare i punti (pulsante)|Click sinistro permette di aggiungere un punto di taglio e un pulsante "reset" mi resetta tutti i punti aggiunti|Quando faccio il click sinistro del mouse mi aggiunge un punto di taglio. Invece quando clicco il pulsante "reset" mi permette di rimuovere tutti i punti di taglio|Ad ogni click sinistro del mouse mi aggiunge un nuovo punto di taglio. Ogni volta che clicco sul pulsante "reset" mi rimuove i punti|Quando faccio il click sinistro del mouse deve essere aggiunto un punto. Quando clicco il pulsante "reset" deve rimuovere tutti i punti|
+|tc-10|req-10|Creare tasto "Genera" per anteprima Fiocco| Pulsante che permette di generare il fiocco di neve|Dopo avere inserito tutti i poligoni di taglio, cliccare il pulsante "cut" che permette di generare il fiocco di neve|Fiocco di neve generato|
+|tc-11|req-11|Generare il fiocco di neve in tempo reale da subito (la live viene visualizzata in basso a sinistra della finestra)|Permette di generare il fiocco in tempo reale|Ad ogni click del mouse mi genera in tempo reale il fiocco di neve|Fiocco di neve generato in tempo reale|
+|tc-12|req-12|Sistema per salvare fiocco di neve generato in immagine (nella schermata anteprima)|Permette di salvare il fiocco in png e svg|Cliccare un pulsante per generare un immagine png e un'altro pulsante per svg|Immagine del fiocco di neve in formato png o svg|
+|tc-13|req-13|Creare pulsante opzione PNG e SVG (dimensioni: 500px 0 1000px)|Permette di definire la dimensione dell'immagine|Cliccare un radio button specifico (500px o 1000px) in modo che posso creare un immagine con una determinata dimensione|Immagine con dimensioni 500px o 1000px|
+|tc-14|req-14|Sistema per salvare i punti per modifiche o rigenerazioni future (database + miniature)|File template nel quale ho i vari punti per generazioni future|Cliccare un pulsante che mi permette d generare un file csv con all'interno tutte le coordinate die vari punti di taglio|File template|
+|tc-15|req-15|Salvataggio percorso in un file CSV|File csv con le varie coordinate|Ogni volta che si salvano i punti vengono scritti all'interno del file csv|Punti salvati nel file csv|
+|tc-16|req-16|Creare un sito web|Sito web con i vari contenuti|Aprire il sito web e verificare che ci siano tutti contenuti neccessari|Sito web|
+|tc-17|req-17|Web e contesto|Sito web deve contenere lista req. di sistema, JRE, guida con screenshots|Aprire il sito per potere capire come funziona l'applicazione guida|Verificare che nel sito una guida per capire come funziona l'applicazione|
+|tc-18|req-18| Web e sistema|Pulsante che permette di scaricare l'applicazione| Entrare nel sito e cliccare il pulsante per scaricare applicazione|Potere scaricare l'applicazione|
 
 
 ### Pianificazione
