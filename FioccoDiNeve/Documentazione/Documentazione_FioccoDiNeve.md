@@ -54,7 +54,7 @@
   In questo capitolo vengono raccolte diverse informazioni relative al proggetto:
 
   -   Allievo: Pierpaolo Casati (Sviluppatore)
-  -   Docenti: Geo Petrini e Luca Muggiasca (clienti e superiori professionali)
+  -   Docenti: Geo Petrini e Luca Muggiasca (superiori professionali)
 
   -   Scuola Arti e Mestieri / CPT Trevano-Canobbio , sezione informatica, modulo 306 - Realizzare un piccolo proggetto IT
 
