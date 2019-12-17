@@ -64,12 +64,12 @@
 
 ### Abstract
 
-Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante il primo semestre tutti gli allievi del terzo anno della sezione informatica devono gestire e realizzare un proggetto IT. Il nome del proggetto si chiama Fiocco di neve ed è un software che permette di generare dei fiocchi di neve. Questo proggetto viene realizzato in modo individuale da ogni allievo. Alla fine del proggetto deve essere presentato e mostrato davanti a tutta la classe.
+Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri di Trevano. Durante il primo semestre tutti gli allievi del terzo anno della sezione informatica devono gestire e realizzare un proggetto IT. Il nome del proggetto si chiama Fiocco di neve ed è un software che permette di generare dei fiocchi di neve. Questo proggetto viene realizzato in modo individuale da ogni allievo. Alla fine del proggetto deve essere presentato e mostrato davanti a tutta la classe.
 
 
 ### Scopo
 
-  Il primo scopo di questo proggetto è mettere in pratica le nezioni che abbiamo imparato quest'anno e negli anni precedenti. Invece il secondo scopo di questo proggetto è imparare a realizzare e gestire in modo corretto un piccolo proggetto IT.
+  Il primo scopo di questo proggetto è mettere in pratica le nozioni che abbiamo imparato quest'anno e negli anni precedenti. Invece il secondo scopo è quello di imparare a realizzare e gestire in modo corretto un piccolo proggetto IT.
 
 
 ## Analisi
