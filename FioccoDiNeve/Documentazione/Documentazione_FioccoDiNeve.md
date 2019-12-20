@@ -208,7 +208,7 @@ SnowflakeGenerator
 
 ### Design procedurale
 
-- [Javadoc](../Dist/javadoc/index.html)
+- [Javadoc](../Javadoc)
 
 ## Implementazione
 
