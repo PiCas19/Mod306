@@ -292,9 +292,6 @@ private void draw() {
 
 ```
 
-
-
-
 Il metodo draw permette di disegnare lo stato della finestra di taglio.
 In questo metodo vengono disegnati:
   - SnowflakeTriangle (prima del taglio e dopo il taglio)
@@ -317,15 +314,6 @@ Qui sotto viene mostrato come creare una buffered image.
 ```
 
 
-
-
-
-
-
-
-
-
-
 Metodo per ridemensionare bufferd image.
 
 ```java
@@ -345,14 +333,6 @@ private BufferedImage resized(Dimension scale) {
 
 
 ```
-
-
-
-
-
-
-
-
 
 Metodo che serve per ridimensionare la finestra.
 
@@ -389,20 +369,6 @@ Metodo che serve per ridimensionare la finestra.
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### Aggiungere punti di taglio
 
 Ad ogni click sinistro del mouse aggiungo un nuovo punto alla lista di punti.
@@ -424,21 +390,6 @@ public void addPoint(Point p) {
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 In questo metodo controllo che ogni punto sia all'interno della finestra di taglio.
 
 
@@ -450,11 +401,110 @@ Per generare il fiocco neve o creato due classi:
 - LivePanel (finestra sul quale viene generato il fiocco di neve)
 
 
-##### cutPolygon
+##### CutPolygon
 
-In questa classe faccio i vari calcoli per tagliare l'area di un triangolo e per generare un poligono di taglio.
+In questa classe faccio i vari calcoli per disegnare e per collegare i punti di taglio. L'area del triangolo viene modificata solo quando clicco il pulsante "Cut". Quando clicco quest'ultimo mi richiama un metodo che perette di rimuovere solamente l'intersezione tra l'area del triangolo e l'area dei poligini di taglio.
+
+```java
+
+public void cut(){
+       if( this.polygons.size() > 0){
+           this.cut = true;
+           for(int i = 0; i < polygons.size(); i++){
+               this.clonePolygons.add(this.polygons.get(i));
+               Area areaPolygon = new Area(polygons.get(i));
+               this.areaTriangle.subtract(areaPolygon);
+           }
+           this.polygons.clear();
+       }
+       repaint();
+   }
+
+```
+##### LivePanel
+
+In questa libreria viene generato e disegnato il fiocco di neve. Per realizzare il fiocco di neve ho utilizzato AffineTransform.
 
 
+
+
+
+
+##### Generazione immagine PNG e svg
+
+Per la generazioe dell'immagine PNG ho creato un immagine PNG utilizzando la classe Image e inseguito ho disegnato sopra il fiocco di neve rifacendo i calcoli. Invece per l'immagine SVG ho scaricato una libreria chiamata [batik](https://xmlgraphics.apache.org/batik/).
+
+
+##### Salvataggio Punti
+Per il salvataggio ho utilizzato la libreria JFileChooser che permette di aprire una finestra per scegliere o aprire file. Inseguto ho utilizzato il seguente metodo per potere scrivere all'interno di un file CSV.
+
+```java
+
+public void createCSV(File directory) throws IOException{
+
+
+     //creazione file
+     File fileName = new File(
+                     directory.toPath().toAbsolutePath().toString() +"/template_ " + new Date().toString() +".csv"
+     );
+
+
+
+
+     //contenuto che ci deve essere all'interno del csv
+     List<List<String>> rows = new ArrayList<>();
+     for(Polygon p : this.clonePolygons){
+         rows.add(
+                 Arrays.asList(
+                         String.valueOf(p.npoints),
+                         Arrays.toString(p.xpoints),
+                         Arrays.toString(p.ypoints)
+                 )
+         );
+
+     }
+
+     //scrivo all'intrno del file
+
+     FileWriter csvWriter = new FileWriter(fileName);
+
+
+
+     for (List<String> rowData : rows) {
+         csvWriter.append(String.join("; ", rowData));
+         csvWriter.append("\n");
+     }
+
+     csvWriter.flush();
+     csvWriter.close();
+
+     fileName.setReadOnly();
+     fileName.setWritable(false);
+     JOptionPane.showMessageDialog(
+             null, "Save cut polygons");
+ }
+```
+
+Per potere leggere il contenuto ho lavorato con la libreria String.
+
+##### Menu principale
+
+Per il menu principale mi sono isparato molto a già applicazioni esistenti come ad Esempio Sketch.
+
+![sketch](img/sketch.png)
+
+
+Invece per aprire un sito web cliccando un bottone ho utilizzato il seguente codice.
+
+
+```java
+public void goToWebSite(String url){
+       try {
+           java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
+       } catch (IOException ex) {
+       }
+   }
+```
 
 #### Creazione sito web
 
@@ -505,18 +555,28 @@ tc-04|req-04|Schermata di caricamento con miniatura|Quando avvio l'aplicazione s
 
 ### Risultati test
 
-Tabella riassuntiva in cui si inseriscono i test riusciti e non del
-prodotto finale. Se un test non riesce e viene corretto l’errore, questo
-dovrà risultare nel documento finale come riuscito (la procedura della
-correzione apparirà nel diario), altrimenti dovrà essere descritto
-l’errore con eventuali ipotesi di correzione.
+|**ID**	| **Funziona**|**Note**|
+|-------|-------------|--------|
+|tc-01  |Sì           |Menu diverso|
+|tc-02  |Parzialmente |Manca solo miniatura|
+|tc-03  |Sì           |Menu si trova a ovest nel frame|
+|tc-04  |Parzialmente |Manca solo caricamneto miniatura|
+|tc-05  |Sì           ||
+|tc-06  |Sì           ||
+|tc-07  |Parzialmente |Manca solo combobox per scegliere tipo di figura|
+|tc-08  |Sì           ||
+|tc-09  |Sì           ||
+|tc-10  |Sì           |Bottone si chima "Cut"|
+|tc-11  |No           ||
+|tc-12  |Sì           ||
+|tc-13  |Sì           ||
+|tc-14  |Sì           ||
+|tc-15  |Sì           ||
+|tc-16  |Sì           ||
+|tc-17  |Sì           ||
+|tc-18  |Sì           ||
 
-### Mancanze/limitazioni conosciute
 
-Descrizione con motivazione di eventuali elementi mancanti o non
-completamente implementati, al di fuori dei test case. Non devono essere
-riportati gli errori e i problemi riscontrati e poi risolti durante il
-progetto.
 
 ## Consuntivo
 
@@ -524,11 +584,11 @@ mettere
 
 ## Conclusioni
 
-Le mie conclusioni sono positive e negative. La conclusione positiva è che si impara a gestire in modo coretto un proggetto IT. Anche se avevo già
+Questo proggetto mi ha permesso di rafforzare le mie nozioni in java e nella proggettazione. Quindi ritengo le mie conclusioni molto positive. In effetti all'inizio non sapevo che cosa dovevo fare per prima, ma grazie alla teoria che ho messo in pratica sono riuscito a realizzare un snowflake generator abbastanza performante.
 
 
 ### Sviluppi futuri
-Per rendere l'applicazione ancora più performante, aggiungerei la possibilità di muovere i punti, di decidere quale punti rimuover e di aggiungere anche la generazione in tempo reale del fiocco di neve.
+Per rendere l'applicazione ancora più performante: aggiungerei la possibilità di muovere i punti, di decidere quale punti rimuovere e di aggiungere anche la generazione in tempo reale del fiocco di neve.
 
 ### Considerazioni personali
 
