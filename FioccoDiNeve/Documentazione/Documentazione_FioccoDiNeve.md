@@ -82,24 +82,24 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri di Trevano. Duran
 
 ### Analisi e specifica dei requisiti
 
-  Il software deve essere funzionante e semplice da utilizzare per il committente. Il prodotto permette di generare un fiocco di neve partendo da un triangolo ritagliato. L'utente può scegliere come tagliare il triangolo, cioè quanti sono i numeri di punti di taglio e il tipo di poligono con cui tagliare il triangolo. Il prodotto parte con una finestra home dove si può caricare un modello già salvato (miniatura) o creare un nuovo taglio del triangolo. Nella finestra di taglio c'è un menu opzioni (menu a tendina) alto a sinistra, pulsante genera per vedere anteprima fiocco di neve e pulsante reset per rimuovere punto. Per tagliare viene utilizzato click sinistro (opzioni click destro per mancini) e ad ogni click viene mostrato in basso a destra il fiocco di neve (live). Nella schermata anteprima si può salvare modello cliccando un pulsante e si può anche creare un immagine PNG o SVG (scegliendo anche dimesnione 500px - 1000px) cliccando dei pulsanti. La finestra può essere ridimensionabile con dimensione minime 1024x768 px. Questo prodotto è accessibile a tutti su un sito web e non c'è un tipo di sicurezza.
+  Il software deve essere funzionante e semplice da utilizzare per il committente. Il prodotto permette di generare un fiocco di neve partendo da un triangolo ritagliato. L'utente può scegliere come tagliare il triangolo, cioè quanti sono i numeri di punti di taglio e il tipo di poligono con cui tagliare il triangolo. Il prodotto parte con una finestra home dove si può caricare un modello già salvato (miniatura) o creare un nuovo taglio del triangolo. Nella finestra di taglio c'è un menu opzioni (menu a tendina) alto a sinistra, pulsante genera per vedere anteprima fiocco di neve e pulsante reset per rimuovere punto. Per tagliare viene utilizzato click sinistro (opzioni click destro per mancini) e ad ogni click viene mostrato in basso a destra il fiocco di neve (live). Nella schermata anteprima si può salvare modello cliccando un pulsante e si può anche creare un immagine PNG o SVG (scegliendo anche dimensione 500px - 1000px) cliccando dei pulsanti. La finestra può essere ridimensionabile con dimensione minime 1024x768 px. Questo prodotto è accessibile a tutti su un sito web.
 
 
 
   |**ID**	|**Categoria** |**Nome**			|**Priorità**|**Vers**
   |----|------------|----------------|--------|----|
   |req-00|Linguaggio |Deve essere fatto in java|1|1.0|
-  |req-01|Sistema|Creare file salvataggio|2|1.0|
+  |req-01|Sistema|Creare file di salvataggio|2|1.0|
   |req-02|Grafica e linguaggio | Creare schermata home con caricamento miniatura o nuovo taglio|2|1.0|
   |req-03|Grafica e linguaggio | Creare barra menu in alto a sinistra|2|1.0|
   |req-04|Grafica e linguaggio|Schermata di caricamento con miniatura|2|1.0|
   |req-05|Grafica e linguaggio|La finestra deve essere ridimensionabile (Min: 1024x768)|2|1.0|
   |req-06|Grafica e linguaggio|Triangolo ridimensionabile|2|1.0|
-  |req-07|Linguaggio|Creare pulsante opzione numero e tipo di poligono utilizzare|3|1.0|
+  |req-07|Linguaggio|Creare pulsante opzione "numero" e "tipo di poligono da utilizzare"|3|1.0|
   |req-08|Linguaggio |Sistema per tagliare il triangolo|1|1.0|
   |req-09|Linguaggio |Sistema per potere aggiungere (click sinistro del mouse) e resettare i punti (pulsante)|1|1.0|
   |req-010|Linguaggio e grafica |Creare tasto "Genera" per anteprima Fiocco|1|1.0|
-  |req-011|Linguaggio  |Generare il fiocco di neve in tempo reale da subito (la live viene visualizzata in basso a sinistra della finestra)|3|1.0|
+  |req-011|Linguaggio  |Generare il fiocco di neve in tempo reale (la live viene visualizzata in basso a sinistra della finestra)|3|1.0|
   |req-012|Linguaggio |Sistema per salvare fiocco di neve generato in immagine (nella schermata anteprima)|1|1.0|
   |req-013|Grafica e linguaggio |Creare pulsante opzione PNG e SVG (dimensioni: 500px 0 1000px)|1|1.0|
   |req-014|Sistema|Sistema per salvare i punti per modifiche o rigenerazioni future (database + miniature)|1|1.0|
@@ -213,7 +213,7 @@ SnowflakeGenerator
 ## Implementazione
 
 Per realizzare questo proggetto ho pensato a quattro fasi di implementazione:
-- Disegnare triangolo, tagli/poligoni di taglio e responsive della finestra.
+- Disegnare triangolo, punti/poligoni di taglio e responsive della finestra.
 - Generazione del fiocco di neve e generazione immagini PNG o SVG.
 - Salvataggio punti e creazione menu principale.
 - Creazione sito web
@@ -255,11 +255,11 @@ Questo metodo permette di settare le coordinate del triangolo.
 **x3 e y3: Spigolo in centro in basso**
 
 Le coordinate 0 e 1 sono posizionate in proporzione rispetto la finestra di taglio.
-Invece la coordinata 3 è posizionata in modo che il triangolo si un triangolo 30, 60 e 90.
+Invece la coordinata 3 è posizionata in modo che il triangolo sia un triangolo 30, 60 e 90.
 
 #### Classe SnowflakePanel
 
-In questa classe viene disegnato l'area di taglio in cui è iscritto il triangolo.
+In questa classe viene disegnata l'area di taglio in cui è inscritto il triangolo.
 
 ```java
 private void draw() {
@@ -292,18 +292,18 @@ private void draw() {
 
 ```
 
-Il metodo draw permette di disegnare lo stato della finestra di taglio.
+Il metodo draw permette di disegnare lo stato dell'area di taglio.
 In questo metodo vengono disegnati:
-  - SnowflakeTriangle (prima del taglio e dopo il taglio)
+  - SnowflakeTriangle (prima e dopo il taglio)
   - Punti di taglio
   - Poligoni di taglio
 
-In questo metodo utilizzo la variabile g2 che è di tipo Graphics2D che è una libreria di grafica più potente che la Graphics.
+In questo metodo utilizzo la variabile g2 di tipo Graphics2D che è una libreria di grafica con funzioni più avanzate rispetto alla libreria Graphics.
 
 
 ##### Resposnsive
 
-Per fare il resposnive del triangolo e dei punti di taglio ho utilizzato un tecnica di grafica chiamata BufferedImage. Questa tecnica permette di fare tutti i calcoli di ridemensionamento su una buffer image e inseguito viene disegnata l'immagine sullla finestra.
+Per fare il responsive del triangolo e dei punti di taglio ho utilizzato una tecnica di grafica chiamata doppio buffering. Questa tecnica permette di fare tutti i calcoli di ridimensionamento su una buffered image e inseguito viene disegnata l'immagine sulla finestra.
 
 Qui sotto viene mostrato come creare una buffered image.
 
@@ -314,7 +314,7 @@ Qui sotto viene mostrato come creare una buffered image.
 ```
 
 
-Metodo per ridemensionare bufferd image.
+Metodo per ridimensionare bufferd image.
 
 ```java
 private BufferedImage resized(Dimension scale) {
@@ -371,7 +371,7 @@ Metodo che serve per ridimensionare la finestra.
 
 #### Aggiungere punti di taglio
 
-Ad ogni click sinistro del mouse aggiungo un nuovo punto alla lista di punti.
+Ad ogni click sinistro del mouse aggiungo un nuovo punto alla lista dei punti di taglio.
 
 ```Java
 public void addPoint(Point p) {
@@ -390,7 +390,7 @@ public void addPoint(Point p) {
 
 ```
 
-In questo metodo controllo che ogni punto sia all'interno della finestra di taglio.
+In questo metodo controllo che ogni punto sia all'interno dell'area di taglio.
 
 
 
@@ -398,12 +398,12 @@ In questo metodo controllo che ogni punto sia all'interno della finestra di tagl
 
 Per generare il fiocco neve o creato due classi:
 - CutPolygon (poligoni di taglio)
-- LivePanel (finestra sul quale viene generato il fiocco di neve)
+- LivePanel (finestra sulla quale viene generato il fiocco di neve)
 
 
 ##### CutPolygon
 
-In questa classe faccio i vari calcoli per disegnare e per collegare i punti di taglio. L'area del triangolo viene modificata solo quando clicco il pulsante "Cut". Quando clicco quest'ultimo mi richiama un metodo che perette di rimuovere solamente l'intersezione tra l'area del triangolo e l'area dei poligini di taglio.
+In questa classe faccio i vari calcoli per disegnare e per collegare i punti di taglio. L'area del triangolo viene modificata solo quando clicco il pulsante "Cut". Quando clicco quest'ultimo mi richiama un metodo che permette di rimuovere solamente l'area di intersezione tra l'area del triangolo e l'area dei poligini di taglio.
 
 ```java
 
@@ -423,7 +423,7 @@ public void cut(){
 ```
 ##### LivePanel
 
-In questa libreria viene generato e disegnato il fiocco di neve. Per realizzare il fiocco di neve ho utilizzato AffineTransform.
+In questa classe viene generato e disegnato il fiocco di neve. Per realizzare il fiocco di neve ho utilizzato AffineTransform. Quest'ultima è un libreria matematica che utilizza i vettori.
 
 
 
@@ -432,11 +432,11 @@ In questa libreria viene generato e disegnato il fiocco di neve. Per realizzare 
 
 ##### Generazione immagine PNG e svg
 
-Per la generazioe dell'immagine PNG ho creato un immagine PNG utilizzando la classe Image e inseguito ho disegnato sopra il fiocco di neve rifacendo i calcoli. Invece per l'immagine SVG ho scaricato una libreria chiamata [batik](https://xmlgraphics.apache.org/batik/).
+Per la generazione dell'immagine PNG ho creato una nuova immagine di tipo PNG sulla quale ho disegnato il fiocco di neve rifacendo i calcoli. Invece per l'immagine SVG ho scaricato una libreria chiamata [batik](https://xmlgraphics.apache.org/batik/).
 
 
 ##### Salvataggio Punti
-Per il salvataggio ho utilizzato la libreria JFileChooser che permette di aprire una finestra per scegliere o aprire file. Inseguto ho utilizzato il seguente metodo per potere scrivere all'interno di un file CSV.
+Per il salvataggio ho utilizzato la libreria JFileChooser che permette di aprire una finestra sulla quale posso aprire o salvare un file. Inseguto ho utilizzato il seguente metodo per poter scrivere all'interno di un file CSV.
 
 ```java
 
@@ -485,16 +485,16 @@ public void createCSV(File directory) throws IOException{
  }
 ```
 
-Per potere leggere il contenuto ho lavorato con la libreria String.
+Per poter leggere il contenuto ho lavorato con le stringhe.
 
 ##### Menu principale
 
-Per il menu principale mi sono isparato molto a già applicazioni esistenti come ad Esempio Sketch.
+Per il menu principale mi sono isparato molto a delle applicazioni già esistenti, come ad esempio Sketch.
 
 ![sketch](img/sketch.png)
 
 
-Invece per aprire un sito web cliccando un bottone ho utilizzato il seguente codice.
+Per aprire un sito web da java ho utilizzato il seguente metodo.
 
 
 ```java
@@ -517,16 +517,16 @@ Per realizzare la pagina web del progetto ho scaricato dal sito https://freehtml
 
 |**ID**	|**Referimento** |**Nome** |**Descrizione** |**Procedura** |**Risultati attesi**
 |----------|----------------|---------|----------------|--------------|--------------------|
-|tc-01 | req-01|Creare file salvataggio|File sul quale vengono salvati i punti di taglio| Nel menu bar del frame principale cliccare la voce "File" => "Save". Quest'ultimo permette di salvare i punti di taglio| Ogni volta che salvo i punti di taglio l'applicazione deve creare un file di salvataggio punti|
-|tc-02| req-02 | Finestra home con caricamento miniatura o nuovo taglio|Un Frame sul quale posso scegliere se creare un nuovo taglio o caricare dei tagli già esistenti|Quando avvio l'applicazione ho due opzioni:</br>1. Caricare dei tagli già esistenti.</br> 2. Creare un nuovo taglio.</br> Scegliere l'opzione che si vuole| Se scelgo di caricare dei tagli già esistenti, mi crea il triangolo con i vari poligoni di taglio. Invece se scelgo l'opzione nuovo, mi crea una finestra con un nuovo triangolo|
-|tc-03|req-03|Creare barra menu in alto a sinistra|MenuBar in alto a sinistra con opzione file, nel quale si può salvare punti di taglio, craere un nuovo Snowflake e aprire dei tagli esistenti|Cliccare nella menubar l'opzione file| Quando clicclo il menu "File" apre un menu a tendina nel quale si trovano le opzioni "New", "Open", "Save"|
-tc-04|req-04|Schermata di caricamento con miniatura|Quando avvio l'aplicazione si apre per prima una schermata di caricamento dove posso scegliere se creare un nuovo fiocco o caricare una miniatura|Avviare l'applicazione. Nella schermata di caricamento posso scegliere due opzione.|Se scelgo l'opzione "New", mi permette di creare un nuovo fiocco di neve. Se invece clicco "Open", mi permette di caricare dei punti che ho salvato in precedenti tagli. Quest'ultimi posso utilizzarli come template di partenza.|
-|tc-05  |req-05|Finestra ridimensionabile|La finestra dell'aplicazione deve essere ridimensionabile|1. Aprire l'applicazione e con il mouse cercare di ridimensionare la finestra <br/> 2. Diminuire la finestra per verificare che le dimensioni minime sono di 1024x768| La finestra è ridimensionabile e le sue dimensioni minime siano di 1024x768|
-|tc-06|req-06|Triangolo ridimensionabile|Quandi ridimensiono la finestra, si deve anche ridimensionare il triangolo|Ridimensionare la finestra e verificare che il triangolo mantenga le su proporzioni| Il triangolo mantiene le sue proporzioni indipendentemente della dimensione della finestra|
-|tc-07|req-07|Creare pulsante opzione numero e tipo di poligono utilizzare|Un combo box che permette di definire la figura geometrica per tagliare il triangolo.Un'altro pulsante invece permette di aggiungere una nuovo poligono o figura per tagliare il triangolo|Cliccare sul combo box e scgliere la figura gemetrica da utilizzare per tagliare il triangolo. Cliccare il pulsante per aggiungere un nuovo poligono o figura geometrica|Se clicco sul combo box posso scegliere quale figura geometrica serve per tagliare il triangolo. Invece quando clicco il pulsante mi permette di aggiungere una nuovo poligono|
+|tc-01 | req-01|Creare file di salvataggio|File sul quale vengono salvati i punti di taglio| Nel menu bar del frame principale si deve cliccare la voce "File" => "Save". Quest'ultimo permette di salvare i punti di taglio| Ogni volta che salvo i punti di taglio l'applicazione deve creare un file di salvataggio di punti|
+|tc-02| req-02 | Finestra home con caricamento miniatura o nuovo taglio|Un Frame sul quale posso scegliere se creare un nuovo taglio o caricare dei tagli già esistenti|Quando avvio l'applicazione ho due opzioni:</br>1. Caricare dei tagli già esistenti.</br> 2. Creare un nuovo taglio.</br>| Se scelgo di caricare dei tagli già esistenti, mi crea il triangolo con i vari poligoni di taglio. Invece se scelgo l'opzione nuovo, mi crea una finestra con un nuovo triangolo|
+|tc-03|req-03|Creare barra menu in alto a sinistra|MenuBar in alto a sinistra con opzione file, nel quale si può salvare punti di taglio, craere un nuovo Snowflake e aprire dei tagli esistenti|Cliccare nella menubar l'opzione file| Quando clicco il menu "File" apre un menu a tendina nel quale si trovano le opzioni "New", "Open", "Save"|
+tc-04|req-04|Schermata di caricamento con miniatura|Quando avvio l'applicazione si apre per prima una schermata di caricamento dove posso scegliere se creare un nuovo fiocco o caricare una miniatura|Avviare l'applicazione. Nella schermata di caricamento posso scegliere due opzione.|Se scelgo l'opzione "New", mi permette di creare un nuovo fiocco di neve. Se invece clicco "Open", mi permette di caricare dei punti che ho salvato in precedenti tagli. Quest'ultimi posso utilizzarli come template di partenza.|
+|tc-05  |req-05|Finestra ridimensionabile|La finestra dell'applicazione deve essere ridimensionabile|1. Aprire l'applicazione e con il mouse cercare di ridimensionare la finestra <br/> 2. Diminuire la finestra per verificare che le dimensioni minime sono di 1024x768| La finestra è ridimensionabile e le sue dimensioni minime siano di 1024x768|
+|tc-06|req-06|Triangolo ridimensionabile|Quandi ridimensiono la finestra, si deve anche ridimensionare il triangolo|Ridimensionare la finestra e verificare che il triangolo mantenga le sue proporzioni| Il triangolo mantiene le sue proporzioni indipendentemente dalla dimensione della finestra|
+|tc-07|req-07|Creare pulsante opzione "numero" e "tipo di poligono da utilizzare"|"Un combo box che permette di definire la figura geometrica per tagliare il triangolo.Un'altro pulsante invece permette di aggiungere una nuovo poligono o figura per tagliare il triangolo|Cliccare sul combo box e scgliere la figura gemetrica da utilizzare per tagliare il triangolo. Cliccare il pulsante per aggiungere un nuovo poligono o figura geometrica|Se clicco sul combo box posso scegliere quale figura geometrica serve per tagliare il triangolo. Invece quando clicco il pulsante mi permette di aggiungere una nuovo poligono|
 |tc-08|req-08|Sistema per tagliare il triangolo|Sistema che mi permette di tagliare il triangolo|Ad ogni click mi permette di aggiungere un punto di taglio. Quest'ultimi vengono collegati e generano un poligono. Cliccando un pulsante "Cut" taglia il triangolo e genera il fiocco di neve|Fiocco di neve generato|
-|tc-09|Sistema per potere aggiungere (click sinistro del mouse) e resettare i punti (pulsante)|Click sinistro permette di aggiungere un punto di taglio e un pulsante "reset" mi resetta tutti i punti aggiunti|Quando faccio il click sinistro del mouse mi aggiunge un punto di taglio. Invece quando clicco il pulsante "reset" mi permette di rimuovere tutti i punti di taglio|Ad ogni click sinistro del mouse mi aggiunge un nuovo punto di taglio. Ogni volta che clicco sul pulsante "reset" mi rimuove i punti|Quando faccio il click sinistro del mouse deve essere aggiunto un punto. Quando clicco il pulsante "reset" deve rimuovere tutti i punti|
-|tc-10|req-10|Creare tasto "Genera" per anteprima Fiocco| Pulsante che permette di generare il fiocco di neve|Dopo avere inserito tutti i poligoni di taglio, cliccare il pulsante "cut" che permette di generare il fiocco di neve|Fiocco di neve generato|
+|tc-09|Sistema per potere aggiungere (click sinistro del mouse) e resettare i punti (pulsante)|Click sinistro permette di aggiungere un punto di taglio e un pulsante "reset" mi resetta tutti i punti aggiunti|Quando faccio il click sinistro del mouse mi aggiunge un punto di taglio. Invece quando clicco il pulsante "reset" mi permette di rimuovere tutti i punti di taglio|Ad ogni click sinistro del mouse mi aggiunge un nuovo punto di taglio. Ogni volta che clicco sul pulsante "reset" mi rimuove i punti|Quando faccio il click sinistro del mouse deve essere aggiunto un punto. Quando clicco il pulsante "reset" si deve rimuovere tutti i punti|
+|tc-10|req-10|Creare tasto "Genera" per anteprima Fiocco| Pulsante che permette di generare il fiocco di neve|Dopo avere inserito tutti i poligoni di taglio, cliccare il pulsante "Cut" che permette di generare il fiocco di neve|Fiocco di neve generato|
 |tc-11|req-11|Generare il fiocco di neve in tempo reale da subito (la live viene visualizzata in basso a sinistra della finestra)|Permette di generare il fiocco in tempo reale|Ad ogni click del mouse mi genera in tempo reale il fiocco di neve|Fiocco di neve generato in tempo reale|
 |tc-12|req-12|Sistema per salvare fiocco di neve generato in immagine (nella schermata anteprima)|Permette di salvare il fiocco in png e svg|Cliccare un pulsante per generare un immagine png e un'altro pulsante per svg|Immagine del fiocco di neve in formato png o svg|
 |tc-13|req-13|Creare pulsante opzione PNG e SVG (dimensioni: 500px 0 1000px)|Permette di definire la dimensione dell'immagine|Cliccare un radio button specifico (500px o 1000px) in modo che posso creare un immagine con una determinata dimensione|Immagine con dimensioni 500px o 1000px|
@@ -566,7 +566,7 @@ tc-04|req-04|Schermata di caricamento con miniatura|Quando avvio l'aplicazione s
 |tc-07  |Parzialmente |Manca solo combobox per scegliere tipo di figura|
 |tc-08  |Sì           ||
 |tc-09  |Sì           ||
-|tc-10  |Sì           |Bottone si chima "Cut"|
+|tc-10  |Sì           |Bottone si chiama "Cut"|
 |tc-11  |No           ||
 |tc-12  |Sì           ||
 |tc-13  |Sì           ||
@@ -596,65 +596,21 @@ Grazie a questo progetto ho imparato a realizzare e gestire in modo corretto un 
 
 ## Bibliografia
 
-### Bibliografia per articoli di riviste
-1.  Cognome e nome (o iniziali) dell’autore o degli autori, o nome
-    dell’organizzazione,
-
-2.  Titolo dell’articolo (tra virgolette),
-
-3.  Titolo della rivista (in italico),
-
-4.  Anno e numero
-
-5.  Pagina iniziale dell’articolo,
-
-### Bibliografia per libri
-
-
-1.  Cognome e nome (o iniziali) dell’autore o degli autori, o nome
-    dell’organizzazione,
-
-2.  Titolo del libro (in italico),
-
-3.  ev. Numero di edizione,
-
-4.  Nome dell’editore,
-
-5.  Anno di pubblicazione,
-
-6.  ISBN.
 
 ### Sitografia
 
-1.  URL del sito (se troppo lungo solo dominio, evt completo nel
-    diario),
-
-2.  Eventuale titolo della pagina (in italico),
-
-3.  Data di consultazione (GG-MM-AAAA).
-
-**Esempio:**
-
--   http://standards.ieee.org/guides/style/section7.html, *IEEE
-    Standards Style Manual*, 07-06-2008.
+- https://www.iconfinder.com, *Sito web per scaricare icone**, 19-12-2019
+- https://stackoverflow.com, *Sito web che contiene risposte o domande ad argomenti di programmazione**, 13-12-2019
+- https://docs.oracle.com/javase/7/docs/api/index.html, *Java Platform, Standard Edition 7 API Specification*, 13-12-2019
+- https://freehtml5.co, *Sito web per scaricare template html5*, 16-12-2019
+- http://www.samtinfo.ch/i17caspie/Snowflake%20website/, *Sito web dell'applicazione**, 20-12-2019
 
 ## Allegati
 
-Elenco degli allegati, esempio:
+Elenco degli allegati:
 
--   Diari di lavoro
+-   [diari](../Diari)
 
--   Codici sorgente/documentazione macchine virtuali
+-   [Codice sorgente](../SnowflakeGenerator)
 
--   Istruzioni di installazione del prodotto (con credenziali
-    di accesso) e/o di eventuali prodotti terzi
-
--   Documentazione di prodotti di terzi
-
--   Eventuali guide utente / Manuali di utilizzo
-
--   Mandato e/o Qdc
-
--   Prodotto
-
--   …
+-   [Qdc](../QdC_Primo Semestre - Fiocco di neve)
