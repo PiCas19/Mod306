@@ -1,22 +1,22 @@
 # Fiocco di neve | Diario di lavoro
 ##### Pierpaolo Casati
-### Canobbio, 6.12.2019
+### Canobbio, 13.12.2019
 
 ## Lavori svolti
 
 
 |Data|Orario        |Lavoro svolto                 |
 |-----|--------------|------------------------------|
-|6.12.2019|8:20-10:00|Test Gantt                    |
-|6.12.2019|10:05 - 11:35| Documentazione|
+|13.12.2019|8:20-16:30|documentazione|
 
 
 ##  Problemi riscontrati e soluzioni adottate
 
+
 ##  Punto della situazione rispetto alla pianificazione
 
-#### Documentazione da terminare e iniziare sito web
+#### Iniziare sito web
 
 
 ## Programma per la prossima giornata di lavoro
-#### Terminare documentazione
+#### Terminare documentazione e iniziare sito web

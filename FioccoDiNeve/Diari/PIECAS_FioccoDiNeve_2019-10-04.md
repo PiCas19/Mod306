@@ -2,7 +2,7 @@
 ##### Pierpaolo Casati
 ### Canobbio, 04.10.2019
 
-## Lavori svoltis
+## Lavori svolti
 
 
 |Data|Orario        |Lavoro svolto                 |
