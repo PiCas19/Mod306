@@ -613,4 +613,4 @@ Elenco degli allegati:
 
 -   [Codice sorgente](../SnowflakeGenerator)
 
--   [Qdc](../QdC_Primo Semestre - Fiocco di neve)
+-   [Qdc](../QdC_Primo%20Semestre%20-%20Fiocco%20di%20neve)
