@@ -24,6 +24,7 @@
 
   - [Design dei dati e database](#design-dei-dati-e-database)
 
+
 1. [Implementazione](#implementazione)
 
 1. [Test](#test)
@@ -118,7 +119,7 @@ Sono Pierpaolo Casati, un allievo della scuola Arti e Mestieri Trevano. Durante 
 
 **Categoria**: tipo di categoria del requisito
 
-**Nome**: breve descrizione del requisito
+**Nome**: Nome del requisito
 
 **Priorità**: indica l’importanza di un requisito nell’insieme del
 progetto.
@@ -128,6 +129,103 @@ progetto.
 
 
 ### Use case
+
+![use case](img/use_case.png)
+
+
+### Pianificazione
+- [Gantt](../Progettazione/Fiocco%20di%20neve.pdf)
+
+### Analisi dei mezzi
+
+- 1 PC fisso della scuola con tool necessari preinstallati
+- 1 PC portatile (MacBook Pro  2015) con tool e SW necessari
+- Java: JDK 12, NetBeans 11.1
+- SW: Atom 1.40.1, GitHub Desktop 2.1.3 e ProjectLibre 1.9.1
+
+## Progettazione
+
+### Design dei dati e dei database
+
+```
+npoints, [xpoints],[ypoints]
+```
+
+**Spiegazioni elementi ne lfile csv:**
+
+**npoints**: numero di punti presenti in un poligono
+**xpoints**: coordinate x dei punti
+**ypoints**: coordinate y dei punti
+
+
+### Design dell’architettura del sistema
+
+```
+SnowflakeGenerator
+│  
+└─── Source Packages
+│   │   
+│   └─── Frame
+│   │   │   LivePanel.java
+│   │   │   MainFrame.java
+│   │   │   SnowflakeFrame.java
+│   │   │   SnowflakePanel.java
+│   │
+│   └─── Image
+│   │     │ home.png
+│   │     │ mouse.png
+│   │     │ new.png
+│   │     │ open.png
+│   │     │ snowflake.png
+│   │
+│   └─── Shapes
+│       │ CutPolygon.java
+│       │ SnowflakeTriangle.java
+│
+└─── Test Packages
+│
+└─── Libraries
+│   │ batik-rasterizer-1.12.jar
+│   │ batik-slideshow-1.12.jar
+│   │ batik-squiggle-1.12.jar
+│   │ batik-svgpp-1.12.jar
+│   │ batik-all-1.12.jar
+│   │ JDK 12
+│
+└─── Test Libraries   
+```
+
+### Schema E-R, schema logico e descrizione.
+
+![uml snowflake](img/uml_snowflake.png)
+
+### Design delle interfacce
+
+![window design](img/window_snowflake.png)
+
+![website design](img/design_website.png)
+
+
+### Design procedurale
+
+- [Javadoc](../Dist/javadoc/index.html)
+
+## Implementazione
+
+Per realizzare questo proggetto ho pensato a tre fasi di implementazione:
+- Disegnare fiocco, tagli/poligoni di taglio e resposnsive della finestra.
+- Generazione del fiocco di neve e generazione immagini PNG o SVG.
+- Salvataggio punti e creazione menu principale.
+
+
+
+
+
+
+
+## Test
+
+### Protocollo di test
 
 |**ID**	|**Referimento** |**Nome** |**Descrizione** |**Procedura** |**Risultati attesi**
 |----------|----------------|---------|----------------|--------------|--------------------|
@@ -151,108 +249,20 @@ tc-04|req-04|Schermata di caricamento con miniatura|Quando avvio l'aplicazione s
 |tc-18|req-18| Web e sistema|Pulsante che permette di scaricare l'applicazione| Entrare nel sito e cliccare il pulsante per scaricare applicazione|Potere scaricare l'applicazione|
 
 
-### Pianificazione
-- [Gantt](../Progettazione/Fiocco%20di%20neve.pdf)
+**Spiegazione elementi tabella dei test case:**
 
-### Analisi dei mezzi
+**ID**: identificativo univoco del test case
 
-- 1 PC fisso della scuola con tool necessari preinstallati
-- 1 PC portatile (MacBook Pro  2015) con tool e SW necessari
-- Java: JDK 12, NetBeans 11.1
-- SW: Atom 1.40.1, GitHub Desktop 2.1.3 e ProjectLibre 1.9.1
+**Referimento**: Requisito del referimento
 
-## Progettazione
+**Nome**: Nome del requisito
 
+**Desrcizione**: breve descrizione del requisito
 
+**Procedura**: Vari passaggi per verificare il Requisito
 
-### Design dell’architettura del sistema
+**Risultati attesi**: Risultati attesi dopo la verifica
 
-Descrive:
-
--   La struttura del programma/sistema lo schema di rete...
-
--   Gli oggetti/moduli/componenti che lo compongono.
-
--   I flussi di informazione in ingresso ed in uscita e le
-    relative elaborazioni. Può utilizzare *diagrammi di flusso dei
-    dati* (DFD).
-
--   Eventuale sitemap
-
-### Design dei dati e database
-
-Descrizione delle strutture di dati utilizzate dal programma in base
-agli attributi e le relazioni degli oggetti in uso.
-
-### Schema E-R, schema logico e descrizione.
-
-Se il diagramma E-R viene modificato, sulla doc dovrà apparire l’ultima
-versione, mentre le vecchie saranno sui diari.
-
-### Design delle interfacce
-
-Descrizione delle interfacce interne ed esterne del sistema e
-dell’interfaccia utente. La progettazione delle interfacce è basata
-sulle informazioni ricavate durante la fase di analisi e realizzata
-tramite mockups.
-
-### Design procedurale
-
-Descrive i concetti dettagliati dell’architettura/sviluppo utilizzando
-ad esempio:
-
--   Diagrammi di flusso e Nassi.
-
--   Tabelle.
-
--   Classi e metodi.
-
--   Tabelle di routing
-
--   Diritti di accesso a condivisioni …
-
-Questi documenti permetteranno di rappresentare i dettagli procedurali
-per la realizzazione del prodotto.
-
-## Implementazione
-
-In questo capitolo dovrà essere mostrato come è stato realizzato il
-lavoro. Questa parte può differenziarsi dalla progettazione in quanto il
-risultato ottenuto non per forza può essere come era stato progettato.
-
-Sulla base di queste informazioni il lavoro svolto dovrà essere
-riproducibile.
-
-In questa parte è richiesto l’inserimento di codice sorgente/print
-screen di maschere solamente per quei passaggi particolarmente
-significativi e/o critici.
-
-Inoltre dovranno essere descritte eventuali varianti di soluzione o
-scelte di prodotti con motivazione delle scelte.
-
-Non deve apparire nessuna forma di guida d’uso di librerie o di
-componenti utilizzati. Eventualmente questa va allegata.
-
-Per eventuali dettagli si possono inserire riferimenti ai diari.
-
-## Test
-
-### Protocollo di test
-
-Definire in modo accurato tutti i test che devono essere realizzati per
-garantire l’adempimento delle richieste formulate nei requisiti. I test
-fungono da garanzia di qualità del prodotto. Ogni test deve essere
-ripetibile alle stesse condizioni.
-
-
-|Test Case      | TC-001                               |
-|---------------|--------------------------------------|
-|**Nome**       |Import a card, but not shown with the GUI |
-|**Riferimento**|REQ-012                               |
-|**Descrizione**|Import a card with KIC, KID and KIK keys with no obfuscation, but not shown with the GUI |
-|**Prerequisiti**|Store on local PC: Profile\_1.2.001.xml (appendix n\_n) and Cards\_1.2.001.txt (appendix n\_n) |
-|**Procedura**     | - Go to “Cards manager” menu, in main page click “Import Profiles” link, Select the “1.2.001.xml” file, Import the Profile - Go to “Cards manager” menu, in main page click “Import Cards” link, Select the “1.2.001.txt” file, Delete the cards, Select the “1.2.001.txt” file, Import the cards |
-|**Risultati attesi** |Keys visible in the DB (OtaCardKey) but not visible in the GUI (Card details) |
 
 
 ### Risultati test
@@ -272,23 +282,18 @@ progetto.
 
 ## Consuntivo
 
-Consuntivo del tempo di lavoro effettivo e considerazioni riguardo le
-differenze rispetto alla pianificazione (cap 1.7) (ad esempio Gannt
-consuntivo).
+gantt consuntivo da mettere
 
 ## Conclusioni
+Da questo progetto posso concludere
 
-Quali sono le implicazioni della mia soluzione? Che impatto avrà?
-Cambierà il mondo? È un successo importante? È solo un’aggiunta
-marginale o è semplicemente servita per scoprire che questo percorso è
-stato una perdita di tempo? I risultati ottenuti sono generali,
-facilmente generalizzabili o sono specifici di un caso particolare? ecc
 
 ### Sviluppi futuri
-  Migliorie o estensioni che possono essere sviluppate sul prodotto.
+Per rendere l'applicazione ancora più performante, aggiungerei la possibilità di muovere i punti, di decidere quale punti rimuover e di aggiungere anche la generazione in tempo reale del fiocco di neve.
 
 ### Considerazioni personali
-  Cosa ho imparato in questo progetto? ecc
+
+Grazie a questo progetto ho imparato a realizzare e gestire in modo corretto un piccolo proggetto IT. Realizzando questo proggetto ho anche aumentato le mie nozioni in Java.
 
 ## Bibliografia
 
