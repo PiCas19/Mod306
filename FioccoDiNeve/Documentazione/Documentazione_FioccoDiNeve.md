@@ -580,7 +580,7 @@ tc-04|req-04|Schermata di caricamento con miniatura|Quando avvio l'aplicazione s
 
 ## Consuntivo
 
-mettere
+- [Gantt consuntivo](../Progettazione/Fiocco%20di%20neve%20consuntivo.pdf)
 
 ## Conclusioni
 
