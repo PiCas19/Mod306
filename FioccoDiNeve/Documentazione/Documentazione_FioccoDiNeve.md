@@ -212,15 +212,253 @@ SnowflakeGenerator
 
 ## Implementazione
 
-Per realizzare questo proggetto ho pensato a tre fasi di implementazione:
-- Disegnare fiocco, tagli/poligoni di taglio e resposnsive della finestra.
+Per realizzare questo proggetto ho pensato a quattro fasi di implementazione:
+- Disegnare triangolo, tagli/poligoni di taglio e responsive della finestra.
 - Generazione del fiocco di neve e generazione immagini PNG o SVG.
 - Salvataggio punti e creazione menu principale.
+- Creazione sito web
+
+
+
+
+#### Classe SnowflakeTriangle
+
+Ho creato la classe SnowflakeTriangle che rappresenta il modello astratto del triangolo che viene utilizzato per generare il fiocco di neve.
+
+```java
+
+public void setCoordinates(){
+        this.x[0] = this.width * 20 / 100;
+        this.y[0] = this.height * 10 / 100;
+        this.x[1] = this.width * 80 / 100;
+        this.y[1] = this.height * 10 / 100;
+
+
+        double a = Math.pow(this.x[1] - this.x[0], 2);
+        double b =  Math.pow(this.y[1] - this.y[0], 2);
+
+        double d = Math.sqrt(a + b);
+
+        double angle = Math.acos((x[1] - this.x[0]) / d);
+
+        this.x[2] = (int) ((2 * d) * Math.cos(Math.PI / 3 + angle) + this.x[0]);
+        this.y[2] = (int) ((2 * d) * Math.sin(Math.PI / 3 + angle) + this.y[0]);
+    }
+
+
+```
+
+Questo metodo permette di settare le coordinate del triangolo.
+
+**x0 e y0: Spigolo in alto a sinistra**
+**x1 e y1: Spigolo in alto a destro**
+**x3 e y3: Spigolo in centro in basso**
+
+Le coordinate 0 e 1 sono posizionate in proporzione rispetto la finestra di taglio.
+Invece la coordinata 3 è posizionata in modo che il triangolo si un triangolo 30, 60 e 90.
+
+#### Classe SnowflakePanel
+
+In questa classe viene disegnato l'area di taglio in cui è iscritto il triangolo.
+
+```java
+private void draw() {
+        //Rettangolo nel quale è insritto il triangolo snowflake.
+        g2.setColor(new Color(26, 26,26));
+        g2.fillRect(0, 0, WIDTH, HEIGHT);
+
+        //SnowflakeTriangle
+        g2.setColor(this.flake);  
+        g2.fill(this.areaTriangle);
+        this.cutPolygon.drawCutPolygon(g2, polygons, new Color(255, 0, 0, 100));
+
+        //Disegno i punti di taglio sulla finestra.
+        g2.setColor(new Color(160,160,160));
+        for (int i = 0; i < this.cutPoints.size(); i++) {
+            Point p = this.cutPoints.get(i);
+            g2.fillOval(p.x - RADIUS, p.y - RADIUS, RADIUS * 2, RADIUS * 2);
+        }
+
+
+
+        //connetto i vari punti
+        this.cutPolygon = new CutPolygon(this.cutPoints);
+
+        this.cutPolygon.connectPointsPolygon(g2);
+
+
+    }
+
+
+```
+
+
+
+
+Il metodo draw permette di disegnare lo stato della finestra di taglio.
+In questo metodo vengono disegnati:
+  - SnowflakeTriangle (prima del taglio e dopo il taglio)
+  - Punti di taglio
+  - Poligoni di taglio
+
+In questo metodo utilizzo la variabile g2 che è di tipo Graphics2D che è una libreria di grafica più potente che la Graphics.
+
+
+##### Resposnsive
+
+Per fare il resposnive del triangolo e dei punti di taglio ho utilizzato un tecnica di grafica chiamata BufferedImage. Questa tecnica permette di fare tutti i calcoli di ridemensionamento su una buffer image e inseguito viene disegnata l'immagine sullla finestra.
+
+Qui sotto viene mostrato come creare una buffered image.
+
+```Java
+  img = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+  g2 = (Graphics2D) img.getGraphics();
+
+```
 
 
 
 
 
+
+
+
+
+
+
+Metodo per ridemensionare bufferd image.
+
+```java
+private BufferedImage resized(Dimension scale) {
+        //immagine buffered temporanea ridimensionata
+        Image tmp = img.getScaledInstance((int) scale.getWidth(), (int) scale.getHeight(), Image.SCALE_SMOOTH);
+        //immagine buffered nuova
+        BufferedImage resized = new BufferedImage((int) scale.getWidth(), (int) scale.getHeight(),
+                BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2d = resized.createGraphics();
+        //disegno l'immagine ridimensionata
+        g2d.drawImage(tmp, 0, 0, null);
+        g2d.dispose();
+        return resized;
+    }
+
+
+
+```
+
+
+
+
+
+
+
+
+
+Metodo che serve per ridimensionare la finestra.
+
+```java
+
+
+    //altezza e altezza originale
+    int original_width = WIDTH;
+    int original_height = HEIGHT;
+
+    //altezza e larghezza dello SnowflakePanel
+    int bound_width = this.getWidth();
+    int bound_height = this.getHeight();
+
+    //nuove altezze e altezze
+    int new_width = original_width;
+    int new_height = original_height;
+
+
+    if (original_width > bound_width) {
+        new_width = bound_width;
+        new_height = (new_width * original_height) / original_width;
+    }
+
+    if (new_height > bound_height) {
+        new_height = bound_height;
+        new_width = (new_height * original_width) / original_height;
+    }
+
+    return new Dimension(new_width, new_height);
+}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Aggiungere punti di taglio
+
+Ad ogni click sinistro del mouse aggiungo un nuovo punto alla lista di punti.
+
+```Java
+public void addPoint(Point p) {
+    Dimension scale = this.getScaledDimension();
+    // i punti sono salvati in coordinate dell'immagine
+    p.x -= (int) (this.getWidth() - scale.getWidth()) / 2;
+    p.y -= (int) (this.getHeight() - scale.getHeight()) / 2;
+    p.x *= (WIDTH / scale.getWidth());
+    p.y *= (HEIGHT / scale.getHeight());
+    if (p.x < 0 || p.y < 10 || p.x > WIDTH  ||
+            p.y > HEIGHT - 10) {
+        return;
+    }
+    this.cutPoints.add(p);
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In questo metodo controllo che ogni punto sia all'interno della finestra di taglio.
+
+
+
+#### Generazione fiocco di neve
+
+Per generare il fiocco neve o creato due classi:
+- CutPolygon (poligoni di taglio)
+- LivePanel (finestra sul quale viene generato il fiocco di neve)
+
+
+##### cutPolygon
+
+In questa classe faccio i vari calcoli per tagliare l'area di un triangolo e per generare un poligono di taglio.
+
+
+
+#### Creazione sito web
+
+Per realizzare la pagina web del progetto ho scaricato dal sito https://freehtml5.co il template "cube". Inseguito ho soltanto modificato il contenuto della pagina web.
 
 
 ## Test
@@ -282,10 +520,11 @@ progetto.
 
 ## Consuntivo
 
-gantt consuntivo da mettere
+mettere
 
 ## Conclusioni
-Da questo progetto posso concludere
+
+Le mie conclusioni sono positive e negative. La conclusione positiva è che si impara a gestire in modo coretto un proggetto IT. Anche se avevo già
 
 
 ### Sviluppi futuri
@@ -293,7 +532,7 @@ Per rendere l'applicazione ancora più performante, aggiungerei la possibilità 
 
 ### Considerazioni personali
 
-Grazie a questo progetto ho imparato a realizzare e gestire in modo corretto un piccolo proggetto IT. Realizzando questo proggetto ho anche aumentato le mie nozioni in Java.
+Grazie a questo progetto ho imparato a realizzare e gestire in modo corretto un piccolo proggetto IT e ho anche aumentato le mie nozioni in Java.
 
 ## Bibliografia
 
